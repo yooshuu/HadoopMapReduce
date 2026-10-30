@@ -10,8 +10,6 @@ import org.apache.hadoop.mapreduce.lib.input.FileInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.FileOutputFormat;
 import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
-import wc.WordCountMapper;
-import wc.WordCountReducer;
 
 /**
  * WordCount2: ToolRunner 기반의 MapReduce 드라이버 클래스
@@ -44,8 +42,8 @@ public class WordCount2 extends Configured implements Tool {
         FileOutputFormat.setOutputPath(job, new Path(args[1]));
 
         // Mapper 및 Reducer 클래스 설정
-        job.setMapperClass(WordCountMapper.class);
-        job.setReducerClass(WordCountReducer.class);
+        job.setMapperClass(WordCount2Mapper.class);
+        job.setReducerClass(WordCount2Reducer.class);
 
         // 출력 키/값 타입 설정
         job.setOutputKeyClass(Text.class);
