@@ -30,7 +30,7 @@ public class WordCount2Mapper extends Mapper<LongWritable, Text, Text, IntWritab
         // 단어 빈도수 구현은 공백을 기준으로 단어로 구분함
         // 분석할 한 줄 내용을 공백으로 나눔
         // word 변수는 공백을 나누너진 단어가 들어감
-        for (String word : line.split("\\w+")) {
+        for (String word : line.split("\\W+")) {
 
             // word 변수에 값이 있다면...
             if (!word.isEmpty()) {

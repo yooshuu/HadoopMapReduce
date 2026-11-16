@@ -53,9 +53,5 @@ public class WordCount {
         // 맵리듀스 실행
         boolean success = job.waitForCompletion(true);
         System.exit(success ? 0 : 1);
-
-
-
-
     }
 }
